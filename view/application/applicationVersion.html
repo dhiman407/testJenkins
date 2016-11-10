@@ -1,0 +1,49 @@
+<md-dialog aria-label="creatApp" class="appCreateDialog popupDialog">
+	<md-toolbar class="bg-white">
+		<div class="md-toolbar-tools">
+			<h2>Release Application</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="apVerCtrl.onCancel()">
+				<md-icon aria-label="Close dialog" class="icon-cancel"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-dialog-content class="mdDialogContent">
+		<div ng-hide="apVerCtrl.onLoading">
+			<form name="createForm">			
+				<div class="form-group appCreate-row">
+					<span class="require_filed require_color">*</span>
+					<select ng-model="apVerCtrl.appImportance" name="appImportance" required>
+						<option value="NORMAL">Normal</option>
+						<option value="OPTIONAL">Optional</option> 
+						<option value="CRITICAL">Critical</option>				
+					</select>
+				</div>
+				<div class="form-group appCreate-row">
+					<span class="require_filed require_color">*</span>
+					<input class="inputFocus" type="text" name="appVersion" ng-model="apVerCtrl.appVersion" placeholder="Enter Version Name" required />
+				</div>
+				<div class="form-group appCreate-row">
+					<span class="require_filed require_color">*</span>
+					<textarea class="inputFocus" ng-model="apVerCtrl.description" name="description" placeholder="Enter Application Description" />		
+				</div>
+				<div class="form-group appCreate-row requireRow">
+					<span class="require_color">*</span>
+					<span class="require_word ng-binding" >Required Field</span>
+				</div>
+			</form>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row" ng-hide="apVerCtrl.onLoading">
+		<div>
+			<md-button ng-click="apVerCtrl.onCancel()" class="b2b-dialog-button cancel-btn btn-cancel" >Cancel</md-button>
+			<md-button class="b2b-dialog-button btn-submit"  ng-disabled="!(createForm.$valid && !createForm.platform.$pristine)"  ng-click="apVerCtrl.createApplication()">Submit</md-button>
+		</div>
+	</md-dialog-actions>
+	<md-dialog-content ng-show="apVerCtrl.onLoading">
+		<div class="appCreate-loading" >
+			<img src="public/images/fs.spinner.gif" />
+		</div>
+	</md-dialog-content>
+</md-dialog>
+

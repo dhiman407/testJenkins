@@ -1,0 +1,48 @@
+{
+	"count":5,
+	"appVersionList":[
+		{
+			"appId":1,
+			"appVersionId":1,
+			"appVersionName":"App Version 1",
+			"appVersionSummary":"Summary",
+			"appVersionImportance":"NORMAL",
+			"appVersionHash":"#asdasadasd",
+			"contentSizeBytes":"500MB"
+		},
+		{
+			"appId":1,
+			"appVersionId":2,
+			"appVersionName":"App Version 2",
+			"appVersionSummary":"Summary",
+			"appVersionImportance":"NORMAL",
+			"appVersionHash":"#asdasadasd",
+			"contentSizeBytes":"200MB"
+		},{
+			"appId":1,
+			"appVersionId":3,
+			"appVersionName":"App Version 3",
+			"appVersionSummary":"Summary",
+			"appVersionImportance":"NORMAL",
+			"appVersionHash":"#asdasadasd",
+			"contentSizeBytes":"104MB"
+		},{
+			"appId":1,
+			"appVersionId":4,
+			"appVersionName":"App Version 4",
+			"appVersionSummary":"Summary",
+			"appVersionImportance":"NORMAL",
+			"appVersionHash":"#asdasadasd",
+			"contentSizeBytes":"120MB"
+		},{
+			"appId":1,
+			"appVersionId":5,
+			"appVersionName":"App Version 5",
+			"appVersionSummary":"Summary",
+			"appVersionImportance":"NORMAL",
+			"appVersionHash":"#asdasadasd",
+			"contentSizeBytes":"103MB"
+		}
+	]
+
+}

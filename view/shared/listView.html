@@ -1,0 +1,12 @@
+<table st-table="displayedCollection" st-safe-src="rowCollection" class="table" >
+	<thead>
+		<tr>
+			<th ng-repeat="col in columnsInfo.columnsDef" ><h2>{{col.header}}</h2></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="row in displayedCollection">	
+			<td ng-repeat="col in columnsInfo.columnsDef" ng-style="{'width': col.width ? col.width:'inherit'}" class="b2b-tableMaxWordWrap"><compile content="col.template"></compile><span ng-if="!col.template">{{row[col.field]}}</span></td>
+		</tr>
+	</tbody>
+</table> 

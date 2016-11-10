@@ -1,0 +1,289 @@
+body {
+	&.dev {
+		aside{
+			background:#000 url(../images/Navigaton_background_DEV.png) 0 40px no-repeat;
+			header{
+				background-color:#275C92;
+				h2{
+					color:#FFFFFF;
+				}
+			}
+			.b2b-environment {
+				color:#00DEFF;
+			}
+			article{
+				ul.sideNav{
+					li{
+						&.active {
+							background-color: rgba(70, 98, 138, 0.4);
+							color:#FFFFFF;
+						}
+						&:hover {
+							background-color: rgba(70, 98, 138, 0.4);
+						}
+					}
+				}
+				footer >ul li{
+					&:hover{
+						background-color: rgba(70, 98, 138, 0.4);
+					}
+				}
+			}
+		}
+		main{
+			header{
+				background-color:#4A90E2;
+				color:#ffffff;
+				nav{
+					ul{
+						li{
+							.ico-head{
+								background-color: #FFFFFF;
+								p{
+									color:#4A90E2;
+								}
+							}
+							.b2b-profileDropdownMenuWrapper{
+								.b2b-dropdownMenuTopContainer{
+									.ico-head{
+										background-color:#4A90E2;
+									}
+								}
+							}
+							.help{
+								.li-click:hover{
+									color: white;
+									background: #4A90E2;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+//---START: ico-head/icon-changeview color in list-view & card-view & dashboard view---//
+		.table{
+			.ico-head{
+				background-color:#4A90E2;
+				p{
+					color:#ffffff;
+				}
+			}
+		}
+		.b2b-cardView{
+			.ico-head{
+				background-color:#4A90E2;
+			}
+			p{
+				color:#FFFFFF;
+			}
+		}
+		.dash-opname{
+			.ico-head{
+				background-color:#4A90E2;
+				p{
+					color:#ffffff;
+				}
+			}
+		}
+		.icon-changeview{
+			color:#79BB43;
+		}
+		.icon-changeview{
+			color:#4A90E2;
+		}
+//---END: ico-head/icon-changeview color in list-view & card-view & dashboard view---//
+		
+//---START: buttons color---//
+		.btn-submit {
+			background-color: #4A90E2;
+			color: #FFFFFF;
+		}
+		.btn-submit:disabled{
+			opacity: 0.3;
+		}
+		.btn-submit:not([disabled]):focus,
+		.btn-submit:not([disabled]):hover,
+		.btn-submit:not([disabled]):active {
+			background-color: #81B2EB;
+			opacity:1;
+		}
+		.btn-cancel {
+			background-color: #FFFFFF;
+			color: #4A90E2;
+			border: 1px solid #4A90E2;
+			margin-right:20px;
+		}
+		.btn-cancel:not([disabled]):focus,
+		.btn-cancel:not([disabled]):hover,
+		.btn-cancel:not([disabled]):active {
+			background-color: #FFFFFF;
+			border:1px solid #81B2EB;
+			color:#81B2EB;
+		}
+//---END: buttons color---//
+		
+//---START: checkbox color---//
+		md-checkbox{
+			.md-ink-ripple {
+				color: #4A90E2;
+			}
+			&.md-checked{
+				.md-ink-ripple {
+					color: #4A90E2;
+				}
+				.md-icon{
+					background-color: transparent;
+					border-color: rgba(0,0,0,0.54);
+					&:after {
+						border-color: #4A90E2;
+					}
+				}
+
+			}
+		}
+//---END: checkbox color---//
+	}
+	&.prod {
+		aside{
+			background:#000 url(../images/Navigaton_background_PROD.png) 0 40px no-repeat;
+			header{
+				background-color:#579921;
+				h2{
+					color:#FFFFFF;
+				}
+			}
+			.b2b-environment {
+				color:#7ED321;
+			}
+			article{
+				ul.sideNav{
+					li{
+						&.active {
+							background-color: rgba(53, 99, 80, 0.4);
+							color:#FFFFFF;
+						}
+						&:hover {
+							background-color: rgba(53, 99, 80, 0.4);
+						}
+					}
+				}
+				footer >ul li{
+					&:hover{
+						background-color: rgba(53, 99, 80, 0.4);
+					}
+				}
+			}
+		}
+		main{
+			header{
+				background-color:#79BB43;
+				color:#ffffff;
+				nav{
+					ul{
+						li{
+							.ico-head{
+								background-color: #FFFFFF;
+								p{
+									color:#79BB43;
+								}
+							}
+							.b2b-profileDropdownMenuWrapper{
+								.b2b-dropdownMenuTopContainer{
+									.ico-head{
+										background-color:#3F9C35;
+									}
+								}
+							}
+							.help{
+								.li-click:hover{
+									color: white;
+									background: #79BB43;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+//---START: ico-head/icon-changeview color in list-view & card-view & dashboard view---//
+		.table{
+			.ico-head{
+				background-color:#79BB43;
+				p{
+					color:#ffffff;
+				}
+			}
+		}
+		.b2b-cardView{
+			.ico-head{
+				background-color:#79BB43;
+			}
+			p{
+				color:#FFFFFF;
+			}
+		}
+		.dash-opname{
+			.ico-head{
+				background-color:#79BB43;
+				p{
+					color:#ffffff;
+				}
+			}
+		}
+		.icon-changeview{
+			color:#79BB43;
+		}
+//---END: ico-head/icon-changeview color in list-view & card-view & dashboard view---//
+		
+//---START: buttons color---//		
+		.btn-submit {
+			background-color: #79BB43;
+			color: #FFFFFF;
+		}
+		.btn-submit:disabled{
+			opacity: 0.3;
+		}
+		.btn-submit:not([disabled]):focus,
+		.btn-submit:not([disabled]):hover,
+		.btn-submit:not([disabled]):active {
+			background-color: #A1D07C;
+			opacity:1;
+		}
+		.btn-cancel {
+			background-color: #FFFFFF;
+			color: #79BB43;
+			border: 1px solid #79BB43;
+			margin-right:20px;
+		}
+		.btn-cancel:not([disabled]):focus,
+		.btn-cancel:not([disabled]):hover,
+		.btn-cancel:not([disabled]):active {
+			background-color: #FFFFFF;
+			border:1px solid #A1D07C;
+			color:#A1D07C;
+		}
+//---END: buttons color---//
+		
+//---START: checkbox color---//
+		md-checkbox{
+			.md-ink-ripple {
+				color: #79BB43;
+			}
+			&.md-checked{
+				.md-ink-ripple {
+					color: #79BB43;
+				}
+				.md-icon{
+					background-color: transparent;
+					border-color: rgba(0,0,0,0.54);
+					&:after {
+						border-color: #79BB43;
+					}
+				}
+
+			}
+		}
+//---END: checkbox color---//
+	}
+}

@@ -1,0 +1,53 @@
+<section class="b2b-dashboardContainer" ng-controller="AppDetailsController as detailsCtrl">
+	<form name="apHistoryForm">
+		<ul class="b2b-profileTopContainer">
+			<li class="textEdit">
+				<img class="logoEdit" src='public/images/img_app.png'>
+			</li>
+			<li class="textEdit">
+				<span class="b2b-profileTitle wordEdit" ng-bind="detailsCtrl.appDetails.appName"></span>
+			</li>
+		</ul>
+		<div class="b2b-profileMiddleContainer b2b-profileLayoutCard">
+			<div class="b2b-cardheader middleHeader">
+				<h2>Basic Information</h2>
+				<a ng-click="apHCtrl.onEdit()" ng-bind="$root.lang.S_00174" ng-hide="apHCtrl.isEditInfo">Edit</a>
+				<a class="b2b-cancelDivider" ng-click="apHCtrl.onSave()" ng-bind="$root.lang.S_00495" ng-show="apHCtrl.isEditInfo">Save</a>
+				<a ng-click="apHCtrl.onCancel()" ng-bind="$root.lang.S_00111" ng-show="apHCtrl.isEditInfo">Cancel</a>
+			</div>
+			<div class="b2b-cardcontent">
+				<div class="basicInfoLeftContainer b2b-applicationProfileLeft">
+					<div class="tableRow">
+						<span class="tableCell"><span>App ID</span>:</span>
+						<span class="tableCell" ng-bind="detailsCtrl.appDetails.appId"></span>
+					</div>
+					<div class="tableRow">
+						<span class="tableCell">
+							<span>Platform</span>:
+						</span>
+						<span class="tableCell">
+							<label ng-bind="(detailsCtrl.details.platformName!='')?detailsCtrl.appDetails.platformName:'N/A'"></label>         
+						</span>
+					</div>
+					<div class="tableRow">
+						<span class="tableCell">Registered Time:</span>
+						<span class="tableCell"><label>03/12/2014</label></span>
+					</div>
+				</div>
+				<div class="basicInfoRightContainer">
+					<span>Descripiton</span>:
+					<br>
+					<br>
+					<label  ng-bind="detailsCtrl.appDetails.appSummary"></label>
+				</div>
+
+			</div>
+		</div>
+<div class="b2b-profileBottomContainer b2b-profileLayoutCard">
+<div class="b2b-cardheader bottomHeader"><h2>Release History</h2><a ng-click="detailsCtrl.versionCreate($event)">Release New Version</a></div>
+<div class="b2b-cardcontent">
+<list-view></list-view>
+</div>
+</div>
+	</form>
+</section>

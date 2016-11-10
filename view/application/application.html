@@ -1,0 +1,59 @@
+<section ng-controller="ApplicationController as Apls" class="b2b-contentMainContainer">
+	<ul ng-hide="Apls.applists.length==0" class="b2b-contentFiltersContainer appFilter" ng-init="contentView='listView'">
+		<li>
+			<button ng-click="Apls.appCreate($event)" class="btn-submit">
+				<i class="icon-add"></i>
+				<span> Register a new App</span>
+			</button>
+		</li>
+	</ul>
+	<div ng-hide="Apls.applists.length==0" class="b2b-contentContainer" ng-switch="contentView">
+		<div ng-switch-when="listView" class="b2b-listViewContainer">
+			<table class="table tablelist">
+				<thead>
+					<th class="col-small">&nbsp;&nbsp;&nbsp;</th>
+					<th class="col-middle col-sm_middle">
+						<h2 class="text-inline" ng-click="Apls.order('name')" >Name</h2>
+						<span ng-class="Apls.reverse ? 'icon-back_to_top' : 'icon-dropdown'" ng-show="Apls.predicate === 'name'" ></span>
+					</th>
+					<th class="col-middle col-sm_middle">
+						<h2 class="text-inline" ng-click="Apls.order('platform')">platform</h2>
+						<span ng-class="Apls.reverse ? 'icon-back_to_top' : 'icon-dropdown'" ng-show="Apls.predicate === 'platform'"   ></span>	
+					</th>
+					<th class="col-middle">
+						<h2 class="text-inline" ng-click="Apls.order('create_date')">Release Date</h2>
+						<span ng-class="Apls.reverse ? 'icon-back_to_top' : 'icon-dropdown'" ng-show="Apls.predicate === 'create_date'"></span>	
+					</th>							
+				</thead>
+				<tbody>
+					<tr ng-class="$even ? 'list_odd' : 'list_even'" ng-repeat="applist in Apls.appList|filter:{platform:searchText, status:applicationStatus}|orderBy:Apls.predicate:Apls.reverse"> 
+						<td class="listViewIcon">
+							<img src="public/images/img_application_default.png" />
+						</td>
+						<td>
+							<a 	ui-sref="applicationHistory(applist)"	ng-bind="applist.appName"></a>
+						</td>						
+						<td  ng-bind="applist.platformName"></td>
+						
+						<td  ng-bind="applist.createDate"></td>					
+					</tr>	
+				</tbody>
+			</table>
+			<md-progress-circular md-diameter="20" class="listViewLoading" ng-disabled="!Apls.isLoading"></md-progress-circular>
+		</div>
+		<div ng-switch-when="cardView" class="b2b-cardViewContainer">
+			<appcard-view ng-repeat="applist in Apls.applists|filter:{platform:searchText, status:applicationStatus}|orderBy:Apls.predicate:Apls.reverse" index="{{$index}}" carddata="applist"></appcard-view>
+		</div>
+	</div>
+	<div ng-show="Apls.applists.length==0" class="no-Data">
+		<h2 ng-bind="$root.lang.S_03307">No data available</h2>
+		<p ng-bind="$root.lang.S_03308">After registering applications, you'll be able to see all your registered applications here in sortable and filterable cards or lists.</p>
+		<div>
+			<button ng-click="Apls.appCreate($event)" class="btn-submit">
+				<i class="icon-add"></i>
+				<span ng-bind="$root.lang.S_02809"> Register a new App</span>
+			</button>
+		</div>
+	</div>
+</section>
+

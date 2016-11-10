@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='acerb2b' ng-controller="MainController as mainCtrl">
+  <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.acer.com/acer-font-foco.css">
+    <link rel="stylesheet" href="public/fonts/fontello/css/fontello.css">
+
+    <!-- build:css -->
+    <!-- don't remove bulid comment , nodejs can complie  it start-->
+    <!-- put the customer css in here -->
+    <link rel="stylesheet" href="public/stylesheets/app.css">
+    <link rel="stylesheet" href="public/stylesheets/main.css">
+    <title>BYOC Partner Portal</title>
+   </head>
+  <body class="dev">
+   <aside class="sideNavigatioBg" ng-if="mainCtrl.getStateName() !== 'login'">
+      <header ui-sref="home">
+        <span class="aside-icon" ui-sref="home"><img width="70" height="30" id="logo-byoc" alt="Acer BYOC" src="public/images/ic_logo_byoc.png"/></span>
+        <h2 class="aside-text">partners</h2>
+        <span class="icon-cancel b2b-menuCloseBtn"  ng-click="mainCtrl.toggleClass()"></span>
+      </header>
+            <article>
+                <ul class="sideNav" ng-click="mainCtrl.toggleClass()">         
+                    <li ui-sref="application" ng-class="mainCtrl.getStateName() == 'application' ? 'active' : ''">
+                        <i class="aside-icon icon-applications"></i>
+                        <p class="aside-text title" >Application</p>
+                    </li>
+                </ul>
+            </article>
+    </aside>
+    <main>
+      <header ng-if="mainCtrl.getStateName() !== 'login'">
+        <h1 class="text-inline"></h1>
+        <nav>
+          <ul>
+            <li>
+              <i class="icon-help"></i>
+              <ul class="help">
+                <li class="li-click" ng-click="mainCtrl.FAQ()">FAQ</li>
+                <li class="li-click" ng-click="mainCtrl.bugReport($event)">Bug Report</li>
+                <li class="li-click" ng-click="mainCtrl.contactUs($event)">Contact us</li>
+              </ul>
+            </li>
+            <li>
+              <i class="icon-notification"></i>
+              <ul class="data">
+                <div class="notificationList">
+                  <li class="markAsRead">Mark all as read</li>
+                                    <li ng-repeat="nt_value in mainCtrl.getNotification()">
+                                        <span class="notifyDetail" ></span>
+                                        <span class="notifyDate" ></span>
+                                    </li>
+                                    <li  ng-if="mainCtrl.getNotification().length == 0">No Data</li>
+                </div>
+                <li>
+                  <a ui-sref="notification"><p>View All</p></a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="ico-head"><p class="text-inline" ng-bind="mainCtrl.getShortName()"></p></span>
+              <ul class="b2b-profileDropdownMenuWrapper">
+                <li class="b2b-dropdownMenuTopContainer">
+                  <div class="ico-head text-inline-block" ng-bind="mainCtrl.getShortName()">Name</div>
+                </li>
+                <li class="b2b-dropdowMenuFooterContainer">
+                  <div class="b2b-menuUserInformation">
+                    <div ng-bind="mainCtrl.getFullName()"></div>
+                  </div>
+                  <a ui-sref="personalProfile">Profile</a>
+                  <a class="b2b-logoutLink" ng-click="mainCtrl.logout()" >Sign Out</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="navDisplayName" ui-sref="partnerProfile" ng-bind="mainCtrl.getCompanyName()"></div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <article ui-view>
+      </article>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-cookies.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.js"></script>     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-smart-table/2.1.8/smart-table.min.js"></script>
+    <script src="public/js/app.js"></script>
+  </body>
+</html>
