@@ -6,13 +6,7 @@ var ngAnnotate = require('gulp-ng-annotate')
 var plumber    = require('gulp-plumber')
 var sourcemaps = require('gulp-sourcemaps')
 var uglify     = require('gulp-uglify')
-var server     = require('gulp-express')
-var express = require('express')
-var app = express()
 
-gulp.task('server',function(){
-  server.run(['app.js']);
-})
 
 gulp.task('js', function () {
   return gulp.src(['src/shared/acerB2bModule.js','src/**/*Module.js', 'src/**/*.js'])
@@ -43,10 +37,5 @@ gulp.task('css:watch', ['css'], function () {
   gulp.watch('scss/**/*.scss', ['css'])
 })
 
-gulp.task('express', function () {
-	app.use(express.static('.'))
-	app.listen(3000)
-})
 
-
-gulp.task('default', ['express','js:watch', 'css:watch'])
+gulp.task('default', ['js:watch', 'css:watch'])
